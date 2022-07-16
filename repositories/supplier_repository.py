@@ -9,6 +9,6 @@ def save(supplier):
     supplier.id = id
     return supplier
 
-def delete(id):
+def delete_all():
     sql = "DELETE FROM suppliers"
     run_sql(sql)
