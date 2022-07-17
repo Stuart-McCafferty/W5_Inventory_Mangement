@@ -9,6 +9,16 @@ def save(supplier):
     supplier.id = id
     return supplier
 
+def select_all():
+    suppliers = []
+    sql = "SELECT * FROM suppliers"
+    results = run_sql(sql)
+
+    for row in results:
+        supplier = Supplier(row['name'], row['link'], row['phone'], row['id'])
+        suppliers.append(supplier)
+    return suppliers
+
 def delete_all():
     sql = "DELETE FROM suppliers"
     run_sql(sql)
