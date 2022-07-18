@@ -20,3 +20,4 @@ CREATE TABLE products (
     supplier_id INT NOT NULL REFERENCES suppliers(id)  ON DELETE CASCADE
 )
 
+
