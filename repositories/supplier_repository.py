@@ -1,4 +1,5 @@
 from db.run_sql import run_sql
+from models.product import Product
 # from models.product import Product
 from models.supplier import Supplier
 
@@ -53,14 +54,14 @@ def update(supplier):
     values = [supplier.name, supplier.link, supplier.phone, supplier.id]
     run_sql(sql, values)
 
-# def products(supplier):
-#     products = []
+def products(supplier):
+    products = []
 
-#     sql = "SELECT * FROM products WHERE supplier_id = %s"
-#     values = [supplier.id]
-#     results = run_sql(sql, values)
+    sql = "SELECT * FROM products WHERE supplier_id = %s"
+    values = [supplier.id]
+    results = run_sql(sql, values)
 
-#     for row in results:
-#         product = Product(row['description'], row['user_id'], row['duration'], row['completed'], row['id'] )
-#         products.append(product)
-#     return products
+    for row in results:
+        product = Product(row['name'], row['quantity'], row['cost'], row['selling_price'], supplier, row['id'])
+        products.append(product)
+    return products

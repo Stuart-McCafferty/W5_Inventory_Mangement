@@ -33,6 +33,10 @@ product_repository.save(product4)
 
 # TESTING
 
+result = supplier_repository.products(supplier1)
+for supplier in result:
+    print(supplier.__dict__)
+
 # product_repository.update(product4)
 # supplier_repository.delete(1)
 # product_repository.delete(3)
@@ -44,7 +48,7 @@ product_repository.save(product4)
 # result = supplier_repository.select(15)
 # print(result.name)
 # result = supplier_repository.select_all()
-# for supplierp in result:
+# for supplier in result:
 #     print(supplier.__dict__)
 
 
