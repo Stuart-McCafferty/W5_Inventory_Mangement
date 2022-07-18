@@ -1,7 +1,7 @@
 -- Deleting tables before creating again
-
-DROP TABLE IF EXISTS suppliers;
 DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS suppliers;
+
 
 
 CREATE TABLE suppliers (
