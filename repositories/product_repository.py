@@ -25,13 +25,20 @@ def select_all():
         products.append(product)
     return products
 
-
+# works
 def delete_all():
     sql = "DELETE FROM products"
     run_sql(sql)
     
-
+# works
 def delete(id):
     sql = "DELETE  FROM products WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+# works
+def update(product):
+    sql = "UPDATE products SET (name, quantity, cost, selling_price, supplier_id) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.name, product.quantity, product.cost, product.selling_price, product.supplier.id, product.id]
+    run_sql(sql,values)
+
