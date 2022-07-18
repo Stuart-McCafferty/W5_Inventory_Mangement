@@ -1,7 +1,7 @@
 from db.run_sql import run_sql
 from models.product import Product
 from models.supplier import Supplier
-import supplier_repository
+import repositories.supplier_repository as supplier_repository
 
 
 # works
@@ -14,13 +14,24 @@ def save(product):
     return product
 
 
+# works
 def select_all():
     products = []
     sql = "SELECT * FROM products"
     results =run_sql(sql)
     for row in results:
-        supplier = supplier_repository.select(row[supplier.id])
+        supplier = supplier_repository.select(row['supplier_id'])
         product = Product(row['name'], row['quantity'], row['cost'], row['selling_price'], supplier, row['id'])
         products.append(product)
     return products
 
+
+def delete_all():
+    sql = "DELETE FROM products"
+    run_sql(sql)
+    
+
+def delete(id):
+    sql = "DELETE  FROM products WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

@@ -17,6 +17,6 @@ CREATE TABLE products (
     quantity DECIMAL(9,2),
     cost DECIMAL(9,2),
     selling_price DECIMAL(9,2),
-    supplier_id INT NOT NULL REFERENCES suppliers(id)
-);
+    supplier_id INT NOT NULL REFERENCES suppliers(id)  ON DELETE CASCADE
+)
 
