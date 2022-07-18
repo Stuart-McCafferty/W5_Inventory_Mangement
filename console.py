@@ -33,7 +33,7 @@ product_repository.save(product4)
 
 # TESTING
 
-result = supplier_repository.products(supplier1)
+result = product_repository.select_all()
 for supplier in result:
     print(supplier.__dict__)
 

@@ -42,3 +42,14 @@ def update(product):
     values = [product.name, product.quantity, product.cost, product.selling_price, product.supplier.id, product.id]
     run_sql(sql,values)
 
+def select(id):
+    product = None
+    sql = "SELECT * FROM products WHERE id = %s"
+    values = [id]
+    result = run_sql(sql, values)[0]
+
+    if result is not None:
+        supplier = supplier_repository.select(result['supplier_id'])
+        product = Product(result['name'], result['quantity'], result['cost'], result['selling_price'], supplier, result['id'])
+    return product
+

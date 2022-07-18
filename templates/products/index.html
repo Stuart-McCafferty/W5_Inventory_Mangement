@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for product in all_products %}
-<div class="product">
-    <div class="content">
-        {{product.supplier.name}}
+<div>
+    <div>
+        <div>Supplier: {{product.supplier.name}}</div>
+        <div>Name: {{product.name}}</div>
+        <div>Quantity: {{product.quantity}}</div>
+        <div>Cost: £{{product.cost}}</div>
+        <div>Selling Price: £{{product.selling_price}}</div>
+        <button><a href="/products/{{product.id}}">Edit</a></button>
+        &nbsp; 
     </div>
 </div>
 {% endfor %}

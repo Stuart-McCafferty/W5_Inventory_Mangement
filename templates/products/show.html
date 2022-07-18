@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+    <div>Supplier: {{product.supplier.name}}</div>
+    <div>Name: {{product.name}}</div>
+    <div>Quantity: {{product.quantity}}</div>
+    <div>Cost: £{{product.cost}}</div>
+    <div>Selling Price: £{{product.selling_price}}</div>
+</div>
+{% endblock  %}

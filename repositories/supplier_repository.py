@@ -54,6 +54,7 @@ def update(supplier):
     values = [supplier.name, supplier.link, supplier.phone, supplier.id]
     run_sql(sql, values)
 
+# works
 def products(supplier):
     products = []
 
