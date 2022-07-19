@@ -34,14 +34,33 @@ def create_supplier():
     return redirect('/suppliers')
 
 # SHOW
-# GET '/products/<id>'
-
+# GET '/suppliers/<id>'
+@suppliers_blueprint.route("/suppliers/<id>", methods=['GET'])
+def show_supplier(id):
+    supplier = supplier_repository.select(id)
+    return render_template('suppliers/show.html', supplier = supplier)
 
 # EDIT
-# GET '/products/<id>/edit'
+# GET '/suppliers/<id>/edit'
+@suppliers_blueprint.route("/suppliers/<id>/edit", methods=['GET'])
+def edit_supplier(id):
+    supplier = supplier_repository.select(id)
+    return render_template('suppliers/edit.html', supplier = supplier)
 
-# UPDATE 
-# PUT '/tasks/<id>
+# UPDATE
+# PUT '/suppliers/<id>'
+@suppliers_blueprint.route("/suppliers/<id>", methods=['POST'])
+def update_supplier(id):
+    name = request.form['name']
+    link     = request.form['link']
+    phone    = request.form['phone']
+    supplier = Supplier(name, link, phone)
+    supplier_repository.save(supplier)
+    return redirect('/suppliers')
 
 # DELETE
-# DELETE '/tasks/<id>
+# DELETE '/suppliers/<id>'
+@suppliers_blueprint.route("/suppliers/<id>/delete", methods=['POST'])
+def delete_supplier(id):
+    supplier_repository.delete(id)
+    return redirect('/suppliers')
