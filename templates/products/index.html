@@ -8,7 +8,11 @@
         <div>Quantity: {{product.quantity}}</div>
         <div>Cost: £{{product.cost}}</div>
         <div>Selling Price: £{{product.selling_price}}</div>
-        <button><a href="/products/{{product.id}}">Edit</a></button>
+        <button><a href="/products/{{product.id}}">View</a></button>
+        <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
+            <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+        </form>
+        <button><a href="/products/{{product.id}}/edit">Edit</a></button>
         &nbsp; 
     </div>
 </div>

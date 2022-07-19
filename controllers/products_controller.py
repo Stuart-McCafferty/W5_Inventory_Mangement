@@ -46,9 +46,29 @@ def show(id):
 
 # EDIT
 # GET '/products/<id>/edit'
+@products_blueprint.route("/products/<id>/edit", methods=['GET'])
+def edit_product(id):
+    product = product_repository.select(id)
+    suppliers = supplier_repository.select_all()
+    return render_template('products/edit.html', product = product, all_suppliers = suppliers)
 
-# UPDATE 
-# PUT '/tasks/<id>
+# UPDATE
+# PUT '/products/<id>'
+@products_blueprint.route("/products/<id>", methods=['POST'])
+def update_product(id):
+    name = request.form['name']
+    quantity     = request.form['quantity']
+    cost    = request.form['cost']
+    selling_price   = request.form['selling_price']
+    supplier_id = request.form['supplier_id']
+    supplier        = supplier_repository.select(supplier_id)
+    product        = Product(name, quantity, cost, selling_price, supplier)
+    product_repository.update(product)
+    return redirect('/products')
 
 # DELETE
-# DELETE '/tasks/<id>
+# DELETE '/tasks/<id>'
+@products_blueprint.route("/products/<id>/delete", methods=['POST'])
+def delete_product(id):
+    product_repository.delete(id)
+    return redirect('/products')
