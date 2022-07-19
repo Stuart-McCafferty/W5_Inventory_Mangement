@@ -1,0 +1,73 @@
+body {
+    background: #222831;
+}
+
+a {
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+header {
+    width: 100%;
+    height: 51px;
+    background: #393E46;
+    margin-bottom: 50px;
+}
+
+ul {
+    background: #00ADB5;
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    color: #EEEEEE;
+    background: #393E46;
+    display: block;
+    float: left;
+    padding: 1rem;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+li a {
+    color: #EEEEEE;
+}
+
+li:hover,
+li:focus-within {
+    background: #00ADB5;
+    cursor: pointer;
+}
+
+li:focus-within a {
+    outline: none;
+}
+
+ul li ul {
+    background: #393E46;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    left: 0;
+    display: none;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover,
+ul li ul:focus {
+    visibility: visible;
+    opacity: 1;
+    display: block
+}
+
+ul li ul li {
+    clear: both;
+    width: 100%;
+}
