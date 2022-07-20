@@ -8,6 +8,11 @@
         <div>Quantity: {{product.quantity}}</div>
         <div>Cost: £{{product.cost}}</div>
         <div>Selling Price: £{{product.selling_price}}</div>
+        {% if product.quantity <= product.low_stock %}
+            <h1 style="color:red;">Low Stock!</h1>
+        {% else %}
+            <h1 style="color:Green;">In Stock</h1>
+        {% endif %}
         <div class="button_box">
             <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
                 <button class="delete">

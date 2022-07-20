@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 from models.product import Product
-# from models.product import Product
 from models.supplier import Supplier
 
 # works
@@ -63,6 +62,6 @@ def products(supplier):
     results = run_sql(sql, values)
 
     for row in results:
-        product = Product(row['name'], row['quantity'], row['cost'], row['selling_price'], supplier, row['id'])
+        product = Product(row['name'], row['quantity'], row['cost'], row['selling_price'], row['low_stock'], supplier, row['id'])
         products.append(product)
     return products
