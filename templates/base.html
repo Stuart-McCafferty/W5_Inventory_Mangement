@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href= " {{ url_for('static', filename='styles.css') }}">
-  
+  <script src="https://kit.fontawesome.com/f4aaabe6a8.js" crossorigin="anonymous"></script>
   <title>Inventory Manager </title>
 </head>
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="/">Menu</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/meals">Menu</a>
+          <ul class="dropdown">
+            <li><a href="/meals">View Menu</a></li>
+            <li><a href="/meals/new">New Meal</a></li>
+          </ul>
+        </li>
         <li><a href="/products">Products</a>
           <ul class="dropdown">
             <li><a href="/products">View Products</a></li>
@@ -21,7 +27,7 @@
         </li>
         <li><a href="/suppliers">Suppliers</a>
           <ul class="dropdown">
-            <li><a href="/suppliers">View Suppliers</a></li>
+            <li><a href="/suppliers">View Supplier</a></li>
             <li><a href="/suppliers/new">New Supplier</a></li>
           </ul>
         </li>

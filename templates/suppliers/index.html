@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for supplier in all_suppliers %}
-<div class="outside_box">
+<div class="outside_box_supplier">
     <div class="box">
         <div>Supplier: {{supplier.name}}</div>
         <div>Link: {{supplier.link}}</div>
         <div>Phone: {{supplier.phone}}</div>
         <div class="button_box">
             <form class="delete-form" action="/supplier/{{supplier.id}}/delete" method="POST">
-                <button class="delete">
+                <button class="buttons">
                     <span class="fa-stack fa-2x">
                         <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
                         <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
@@ -16,7 +16,7 @@
                 </button>
             </form>
             <form class="edit-form" action="/suppliers/{{supplier.id}}/edit">
-                <button class="edit">
+                <button class="buttons">
                     <span class="fa-stack fa-2x">
                         <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
                         <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
@@ -28,3 +28,4 @@
 </div>
 {% endfor %}
 {% endblock content %}
+

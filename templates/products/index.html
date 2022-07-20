@@ -9,20 +9,20 @@
         <div>Cost: £{{product.cost}}</div>
         <div>Selling Price: £{{product.selling_price}}</div>
         {% if product.quantity <= product.low_stock %}
-            <h1 style="color:red;">Low Stock!</h1>
+            <h4 style="color:red;">Low Stock!</h4>
         {% else %}
-            <h1 style="color:Green;">In Stock</h1>
+            <h4 style="color:Green;">In Stock</h4>
         {% endif %}
         <div class="button_box">
             <form class="delete-form" action="/products/{{product.id}}/delete" method="POST">
-                <button class="delete">
+                <button class="buttons">
                     <span class="fa-stack fa-2x">
                         <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
                         <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
                     </span>             </button>
             </form>
             <form class="edit-form" action="/products/{{product.id}}/edit">
-                <button class="edit">
+                <button class="buttons">
                     <span class="fa-stack fa-2x">
                         <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
                         <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse" style="color:#00ADB5"></i>

@@ -1,8 +1,8 @@
 -- Deleting tables before creating again
+DROP TABLE IF EXISTS meals_products;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS suppliers;
 DROP TABLE IF EXISTS meals;
-
 
 
 CREATE TABLE suppliers (
@@ -25,9 +25,18 @@ CREATE TABLE products (
     cost DECIMAL(9,2),
     selling_price DECIMAL(9,2),
     low_stock DECIMAL(9,2),
-    supplier_id INT NOT NULL REFERENCES suppliers(id)  ON DELETE CASCADE,
-    meal_id INT NOT NULL REFERENCES meals(id) ON DELETE CASCADE
+    supplier_id INT NOT NULL REFERENCES suppliers(id)  ON DELETE CASCADE
 );
+
+CREATE TABLE meals_products (
+    id SERIAL PRIMARY KEY,
+    meal_id INT NOT NULL REFERENCES meals(id) ON DELETE CASCADE,
+    product_id INT NOT NULL REFERENCES products(id) ON DELETE CASCADE
+);
+
+
+
+
 
 
 
