@@ -1,17 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 {% for supplier in all_suppliers %}
-<div>
-    <div>
+<div class="outside_box">
+    <div class="box">
         <div>Supplier: {{supplier.name}}</div>
         <div>Link: {{supplier.link}}</div>
         <div>Phone: {{supplier.phone}}</div>
-        <form class="delete-form" action="/suppliers/{{supplier.id}}/delete" method="POST">
-            <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-        </form>
-        <button><a href="/suppliers/{{supplier.id}}/edit">Edit</a></button>
-        
-        &nbsp; 
+        <div class="button_box">
+            <form class="delete-form" action="/supplier/{{supplier.id}}/delete" method="POST">
+                <button class="delete">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
+                        <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
+                    </span>            
+                </button>
+            </form>
+            <form class="edit-form" action="/suppliers/{{supplier.id}}/edit">
+                <button class="edit">
+                    <span class="fa-stack fa-2x">
+                        <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
+                        <i class="fa-solid fa-pen-to-square fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
+                    </span>        
+                </button>
+            </form>
+        </div>
     </div>
 </div>
 {% endfor %}

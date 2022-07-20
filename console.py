@@ -28,6 +28,31 @@ product_repository.save(product3)
 product4 = Product("Black Pudding", 0, 0.7, 8, supplier1)
 product_repository.save(product4)
 
+product5 = Product("Burger", 0, 0.7, 8, supplier1)
+product_repository.save(product5)
+
+product6 = Product("Fish", 0, 0.7, 8, supplier3)
+product_repository.save(product6)
+
+product7 = Product("Bacon", 0, 0.7, 8, supplier1)
+product_repository.save(product7)
+
+product8 = Product("Black Pudding", 0, 0.7, 8, supplier1)
+product_repository.save(product8)
+
+product9 = Product("Burger", 0, 0.7, 8, supplier1)
+product_repository.save(product9)
+
+product10 = Product("Fish", 0, 0.7, 8, supplier3)
+product_repository.save(product10)
+
+product11 = Product("Bacon", 0, 0.7, 8, supplier1)
+product_repository.save(product11)
+
+product12 = Product("Black Pudding", 0, 0.7, 8, supplier1)
+product_repository.save(product12)
+
+
 
 
 

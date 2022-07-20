@@ -4,7 +4,9 @@ body {
 
 a {
     text-decoration: none;
-    color: #EEEEEE;
+    color: #9c9c9c;
+    /* font-family: 'Rubik Moonrocks'; */
+
 }
 
 header {
@@ -12,17 +14,22 @@ header {
     height: 51px;
     background: #393E46;
     margin-bottom: 50px;
+    border-radius: 25px;
 }
 
 ul {
     background: #00ADB5;
     list-style: none;
     margin: 0;
-    padding-left: 0;
+    padding-left: 20px;
+    
 }
 
+ul.dropdown {
+    padding-left: 0px;
+}
 li {
-    color: #EEEEEE;
+    color: #9c9c9c;
     background: #393E46;
     display: block;
     float: left;
@@ -30,6 +37,8 @@ li {
     position: relative;
     text-decoration: none;
     transition-duration: 0.5s;
+    border-radius: 5px;
+
 }
 
 li a {
@@ -70,4 +79,81 @@ ul li ul:focus {
 ul li ul li {
     clear: both;
     width: 100%;
+}
+
+
+.box {
+    float: left;
+    background:#393E46;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color:#00ADB5;
+    margin: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.outside_box {
+    float: left;
+    width: 23%;
+    background:#393E46;
+    border-radius: 5px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.edit-form  {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+
+.delete-form  {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.delete {
+    background:#393E46;
+	border-color: #393E46;
+	border-style: solid;
+}
+
+.edit {
+    background:#393E46;
+    border-color: #393E46;
+	border-style: solid;
+}
+
+div {
+    color: #EEEEEE
+}
+
+.new_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+}
+
+.new_box_small {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 3px;
+    border-color:#00ADB5;
+    margin: 5px;
+    text-align: center;
+}
+
+.button_box {
+    width:95%;
+    display:flex;
+    justify-content: space-evenly;
 }
