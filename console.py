@@ -2,13 +2,16 @@ import pdb
 from models.supplier import Supplier
 from models.product import Product
 from models.meal import Meal
+from models.meal_product import Meal_Product
 import repositories.supplier_repository as supplier_repository
 import repositories.product_repository as product_repository
 import repositories.meal_repository as meal_repository
+import repositories.meal_product_repository as meal_product_repository
 
 supplier_repository.delete_all()
 meal_repository.delete_all()
 product_repository.delete_all()
+
 
 supplier1 = Supplier("Brakes", "https://www.brake.co.uk/", "0345606 9090")
 supplier_repository.save(supplier1)
@@ -27,52 +30,76 @@ meal_repository.save(meal1)
 meal2 = Meal("Fish and Chips", True)
 meal_repository.save(meal2)
 
-
-        # self.name = _name
-        # self.quantity = _quantity
-        # self.cost = _cost
-        # self.selling_price = _selling_price
-        # self.low_stock = low_stock
-        # self.supplier = supplier
-
 # CB BURGER 
-product1 = Product("Burger", 10, 0.7, 8, 9, supplier3, meal1)
+product1 = Product("Burger", 10, 0.7, 8, 9, supplier3)
 product_repository.save(product1)
 
-product2 = Product("Bacon", 10, 0.2, 0.70, 10, supplier3, meal1)
+product2 = Product("Bacon", 10, 0.2, 0.70, 10, supplier3)
 product_repository.save(product2)
 
-product3 = Product("Lettuce", 10, 0.2, 0.70, 9, supplier2, meal1)
+product3 = Product("Lettuce", 10, 0.2, 0.70, 9, supplier2)
 product_repository.save(product3)
 
-product4 = Product("Tomato", 10, 0.2, 0.70, 9, supplier2, meal1)
+product4 = Product("Tomato", 10, 0.2, 0.70, 9, supplier2)
 product_repository.save(product4)
 
-product5 = Product("Brioche buns", 10, 0.2, 0.70, 9, supplier1, meal1)
+product5 = Product("Brioche buns", 10, 0.2, 0.70, 9, supplier1)
 product_repository.save(product5)
 
-product6 = Product("Cheese", 10, 0.2, 0.70, 9, supplier2, meal1)
+product6 = Product("Cheese", 10, 0.2, 0.70, 9, supplier2)
 product_repository.save(product6)
 # ALSO CHIPS HERE
 
 
 # Fish n Chips
 
-product7 = Product("Fish", 10, 0.7, 8, 9, supplier3, meal2)
+product7 = Product("Fish", 10, 0.7, 8, 9, supplier3)
 product_repository.save(product7)
 
-product8 = Product("Peas", 10, 0.2, 0.70, 9, supplier2, meal2)
+product8 = Product("Peas", 10, 0.2, 0.70, 9, supplier2)
 product_repository.save(product8)
 
-product9= Product("Lemon", 10, 0.2, 0.70, 9, supplier2, meal2)
+product9= Product("Lemon", 10, 0.2, 0.70, 9, supplier2)
 product_repository.save(product9)
 
-product10 = Product("Chips", 10, 0.2, 0.70, 9, supplier1, meal2)
+product10 = Product("Chips", 10, 0.2, 0.70, 9, supplier1)
 product_repository.save(product10)
 
 
+# Cheese and Bacon Burger W/ Chips
+meal_product1 = Meal_Product(meal1, product1)
+meal_product_repository.save(meal_product1)
 
+meal_product2 = Meal_Product(meal1, product2)
+meal_product_repository.save(meal_product2)
 
+meal_product3 = Meal_Product(meal1, product3)
+meal_product_repository.save(meal_product3)
+
+meal_product4 = Meal_Product(meal1, product4)
+meal_product_repository.save(meal_product4)
+
+meal_product5 = Meal_Product(meal1, product5)
+meal_product_repository.save(meal_product5)
+
+meal_product6 = Meal_Product(meal1, product6)
+meal_product_repository.save(meal_product6)
+
+meal_product7 = Meal_Product(meal1, product10)
+meal_product_repository.save(meal_product7)
+
+# Fish and Chips
+meal_product8 = Meal_Product(meal2, product7)
+meal_product_repository.save(meal_product8)
+
+meal_product9 = Meal_Product(meal2, product8)
+meal_product_repository.save(meal_product5)
+
+meal_product10 = Meal_Product(meal2, product9)
+meal_product_repository.save(meal_product6)
+
+meal_product11 = Meal_Product(meal2, product10)
+meal_product_repository.save(meal_product11)
 
 
 

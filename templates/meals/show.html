@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="outside_box">
+    <h2>{{ meal.name }}</h2>
+        <h3>Products</h3>
+            <div class="box">
+{% for product in products %}
+                <div>{{ product.name }}</div>
+                
+{% endfor %}  
+            </div>
+</div>
+{% endblock  %}

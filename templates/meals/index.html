@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for meal in all_meals %}
+<div class="outside_box_supplier">
+    <div>Name: {{meal.name}}</div>
+        <div class="box">
+            <div class="button_box">
+                <form class="delete-form" action="/meals/{{meal.id}}/delete" method="POST">
+                    <button class="buttons">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
+                            <i class="fa-solid fa-trash-can fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
+                        </span>            
+                    </button>
+                </form>
+                <form class="edit-form" action="/meals/{{meal.id}}">
+                    <button class="buttons">
+                        <span class="fa-stack fa-2x">
+                            <i class="fa-solid fa-circle fa-stack-2x" style="color:#222831"></i>
+                            <i class="fa-solid fa-eye fa-stack-1x fa-inverse" style="color:#00ADB5"></i>
+                        </span>        
+                    </button>
+                </form>
+            </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}
